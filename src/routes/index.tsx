@@ -1,29 +1,46 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
+import { VisionMission } from "@/components/site/VisionMission";
+import { Principal } from "@/components/site/Principal";
+import { WhyChoose } from "@/components/site/WhyChoose";
+import { Facilities } from "@/components/site/Facilities";
+import { Academics } from "@/components/site/Academics";
+import { Achievements } from "@/components/site/Achievements";
+import { Gallery } from "@/components/site/Gallery";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Admissions } from "@/components/site/Admissions";
+import { Contact } from "@/components/site/Contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "St. Maria High School — Excellence in Education Since 1980" },
+      { name: "description", content: "English-medium State Board school in Lalitha Bagh, Hyderabad. 100% SSC results, 45+ years of excellence. Admissions Open 2026-27." },
+      { property: "og:title", content: "St. Maria High School — Excellence in Education" },
+      { property: "og:description", content: "Nurturing young minds since 1980 with quality education and holistic development." },
+      { property: "og:url", content: "/" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
-  component: Index,
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <About />
+      <VisionMission />
+      <Principal />
+      <WhyChoose />
+      <Facilities />
+      <Academics />
+      <Achievements />
+      <Gallery />
+      <Testimonials />
+      <Admissions />
+      <Contact />
+    </>
   );
 }
