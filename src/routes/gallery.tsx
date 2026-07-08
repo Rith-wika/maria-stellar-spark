@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Gallery } from "@/components/site/Gallery";
 import { Testimonials } from "@/components/site/Testimonials";
 import { PageHero } from "@/components/site/PageHero";
+import heroBg from "@/assets/hero-gallery.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/gallery")({
   }),
   component: () => (
     <>
-      <PageHero eyebrow="Gallery" title="Life at St. Maria" description="Campus, classrooms, events, and celebrations — captured." />
+      <PageHero eyebrow="Gallery" title="Life at St. Maria" description="Campus, classrooms, events, and celebrations — captured." image={heroBg} />
       <Gallery />
       <Testimonials />
     </>

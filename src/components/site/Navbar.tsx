@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/school-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -34,9 +35,13 @@ export function Navbar() {
     >
       <nav className="container-px mx-auto flex max-w-7xl items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl gradient-primary text-primary-foreground shadow-soft">
-            <GraduationCap className="h-6 w-6" />
-          </span>
+          <img
+            src={logo}
+            alt="St. Maria High School logo"
+            width={44}
+            height={44}
+            className="h-11 w-11 shrink-0 rounded-full object-cover shadow-soft"
+          />
           <span className="flex flex-col leading-tight">
             <span className="font-display text-base sm:text-lg font-bold text-foreground">
               St. Maria <span className="text-primary">High School</span>

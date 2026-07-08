@@ -12,8 +12,8 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
 
-  --font-display: "Playfair Display", ui-serif, Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Baloo 2", ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Nunito", ui-rounded, ui-sans-serif, system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -32,6 +32,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
+  --color-flame: var(--flame);
+  --color-flame-foreground: var(--flame-foreground);
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
   --color-destructive: var(--destructive);
@@ -46,21 +48,21 @@
 }
 
 :root {
-  --radius: 0.875rem;
+  --radius: 1.15rem;
 
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.22 0.04 256);
-  --surface: oklch(0.98 0.01 250);
+  --background: oklch(0.99 0.006 250);
+  --foreground: oklch(0.24 0.045 256);
+  --surface: oklch(0.955 0.028 250);
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.22 0.04 256);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.04 256);
 
-  /* School Blue #0B4F9C */
-  --primary: oklch(0.46 0.16 255);
+  /* Logo Azure Blue #1B75BC */
+  --primary: oklch(0.55 0.135 250);
   --primary-foreground: oklch(0.99 0.005 250);
-  --primary-deep: oklch(0.32 0.14 258);
+  --primary-deep: oklch(0.38 0.12 252);
 
   --secondary: oklch(0.96 0.015 250);
   --secondary-foreground: oklch(0.28 0.07 258);
@@ -71,27 +73,31 @@
   --accent: oklch(0.95 0.02 250);
   --accent-foreground: oklch(0.32 0.14 258);
 
-  /* Golden Yellow #F59E0B */
-  --gold: oklch(0.78 0.16 75);
-  --gold-foreground: oklch(0.2 0.05 70);
+  /* Logo Golden Yellow #FFD100 */
+  --gold: oklch(0.85 0.165 90);
+  --gold-foreground: oklch(0.24 0.06 75);
 
-  /* Success Green #10B981 */
-  --success: oklch(0.7 0.15 165);
-  --success-foreground: oklch(0.99 0.005 165);
+  /* Logo Flame Orange #F58220 */
+  --flame: oklch(0.72 0.17 55);
+  --flame-foreground: oklch(0.99 0.005 55);
+
+  /* Logo Candle Green #5BBA47 */
+  --success: oklch(0.7 0.17 140);
+  --success-foreground: oklch(0.99 0.005 140);
 
   --destructive: oklch(0.6 0.22 27);
   --destructive-foreground: oklch(0.99 0.005 250);
 
   --border: oklch(0.91 0.012 250);
   --input: oklch(0.91 0.012 250);
-  --ring: oklch(0.46 0.16 255);
+  --ring: oklch(0.55 0.135 250);
 }
 
 .dark {
   --background: oklch(0.18 0.03 256);
   --foreground: oklch(0.98 0.005 250);
-  --surface: oklch(0.22 0.035 258);
-  --card: oklch(0.22 0.035 258);
+  --surface: oklch(0.32 0.085 255);
+  --card: oklch(0.38 0.09 254);
   --card-foreground: oklch(0.98 0.005 250);
   --popover: oklch(0.22 0.035 258);
   --popover-foreground: oklch(0.98 0.005 250);
@@ -124,7 +130,7 @@
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -138,8 +144,13 @@
   background-image: linear-gradient(135deg, var(--primary-deep), var(--primary));
 }
 
+/* Logo emblem gradient: golden yellow into flame orange */
 @utility gradient-gold {
-  background-image: linear-gradient(135deg, var(--gold), oklch(0.85 0.14 80));
+  background-image: linear-gradient(135deg, var(--gold), var(--flame));
+}
+
+@utility gradient-flame {
+  background-image: linear-gradient(160deg, var(--gold), var(--flame) 70%);
 }
 
 @utility text-gradient-primary {
@@ -147,4 +158,33 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Crayon-style wavy underline for highlighted words */
+@utility squiggle {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='8' viewBox='0 0 60 8'%3E%3Cpath d='M0 5 Q 7.5 0, 15 5 T 30 5 T 45 5 T 60 5' fill='none' stroke='%23F58220' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 3.75rem 0.5rem;
+  padding-bottom: 0.22em;
+}
+
+@utility squiggle-gold {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='8' viewBox='0 0 60 8'%3E%3Cpath d='M0 5 Q 7.5 0, 15 5 T 30 5 T 45 5 T 60 5' fill='none' stroke='%23FFD100' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 3.75rem 0.5rem;
+  padding-bottom: 0.22em;
+}
+
+/* Polka-dot notebook texture */
+@utility bg-dots {
+  background-image: radial-gradient(color-mix(in oklab, var(--primary) 12%, transparent) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Sticker look: chunky white border + soft shadow, slightly tilted */
+@utility sticker {
+  border: 4px solid var(--background);
+  box-shadow: 0 10px 30px -12px color-mix(in oklab, var(--primary) 30%, transparent);
 }

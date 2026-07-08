@@ -68,17 +68,19 @@ export function Admissions() {
                 Admissions Open
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold">
-                Academic Year <span className="text-gold">2026-27</span>
+                Enroll today to make your child a{" "}
+                <span className="text-gold">better human</span>
               </h2>
               <p className="mt-3 text-white/85 max-w-xl">
-                Limited seats available. Begin your child's journey of excellence today.
+                Admissions are open for the academic year 2026-27. Begin your child's
+                journey of knowledge, character, and excellence today.
               </p>
             </div>
             <a
               href="#admission-form"
               className="inline-flex items-center gap-2 rounded-full bg-gold text-gold-foreground px-6 py-3.5 text-sm font-semibold hover:opacity-90 transition"
             >
-              Apply Now
+              Enroll Today to Learn More
             </a>
           </div>
         </motion.div>

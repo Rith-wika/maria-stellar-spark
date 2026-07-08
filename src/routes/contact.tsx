@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Contact } from "@/components/site/Contact";
 import { PageHero } from "@/components/site/PageHero";
+import heroBg from "@/assets/hero-contact.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/contact")({
   }),
   component: () => (
     <>
-      <PageHero eyebrow="Contact" title="Let's Connect" description="Phone, WhatsApp, email, or visit us — we're here for you." />
+      <PageHero eyebrow="Contact" title="Let's Connect" description="Phone, WhatsApp, email, or visit us — we're here for you." image={heroBg} />
       <Contact />
     </>
   ),

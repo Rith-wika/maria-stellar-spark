@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Academics } from "@/components/site/Academics";
 import { Achievements } from "@/components/site/Achievements";
 import { PageHero } from "@/components/site/PageHero";
+import heroBg from "@/assets/hero-academics.jpg";
 
 export const Route = createFileRoute("/academics")({
   head: () => ({
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/academics")({
   }),
   component: () => (
     <>
-      <PageHero eyebrow="Academics" title="Curriculum that Builds Futures" description="State Board, English Medium — balanced, rigorous, and values-driven." />
+      <PageHero eyebrow="Academics" title="Curriculum that Builds Futures" description="State Board, English Medium — balanced, rigorous, and values-driven." image={heroBg} />
       <Academics />
       <Achievements />
     </>

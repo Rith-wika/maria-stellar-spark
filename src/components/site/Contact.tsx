@@ -41,7 +41,7 @@ export function Contact() {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-surface">
+    <section className="dark py-20 lg:py-28 bg-surface text-foreground">
       <div className="container-px mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Get in Touch"
@@ -67,10 +67,10 @@ export function Contact() {
         </div>
 
         <div className="mt-12 grid lg:grid-cols-5 gap-8">
-          <Reveal>
+          <Reveal className="lg:col-span-2">
             <form
               onSubmit={onSubmit}
-              className="lg:col-span-2 rounded-3xl bg-card border border-border p-7 lg:p-9 shadow-soft"
+              className="h-full rounded-3xl bg-card border border-border p-7 lg:p-9 shadow-soft"
             >
               <h3 className="font-display text-2xl font-bold text-foreground">Send a Message</h3>
               <div className="mt-5 space-y-4">
@@ -93,8 +93,8 @@ export function Contact() {
             </form>
           </Reveal>
 
-          <Reveal delay={0.1}>
-            <div id="map" className="lg:col-span-3 rounded-3xl overflow-hidden border border-border shadow-soft h-full min-h-[420px]">
+          <Reveal delay={0.1} className="lg:col-span-3 h-full">
+            <div id="map" className="rounded-3xl overflow-hidden border border-border shadow-soft h-full min-h-[420px]">
               <iframe
                 title="St. Maria High School location"
                 src="https://www.google.com/maps?q=Lalitha+Bagh,+Uppuguda,+Hyderabad&output=embed"

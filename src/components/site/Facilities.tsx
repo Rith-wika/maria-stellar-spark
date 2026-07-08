@@ -6,10 +6,10 @@ import playground from "@/assets/facility-playground.jpg";
 import { Shield, Laptop } from "lucide-react";
 
 const facilities = [
-  { img: classroom, title: "Smart Classrooms", desc: "Technology-enabled rooms with digital boards for interactive learning." },
-  { img: library, title: "Rich Library", desc: "A curated collection of educational and literary books for every grade." },
-  { img: lab, title: "Science Labs", desc: "Well-equipped labs for hands-on practical experiments." },
-  { img: playground, title: "Playground", desc: "Spacious grounds for sports, games, and physical development." },
+  { img: classroom, title: "Digital Classrooms", desc: "Technology-enabled digital classrooms for interactive, engaging lessons at every grade." },
+  { img: library, title: "Library", desc: "A curated collection of educational and literary books that builds a daily reading habit." },
+  { img: lab, title: "Labs", desc: "Well-equipped labs for hands-on practical learning and experiments." },
+  { img: playground, title: "Playground", desc: "Open playground for sports, games, and physical development." },
 ];
 
 export function Facilities() {
@@ -18,8 +18,8 @@ export function Facilities() {
       <div className="container-px mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Campus & Facilities"
-          title={<>World-class <span className="text-gradient-primary">Learning Spaces</span></>}
-          description="Modern infrastructure designed to inspire curiosity and active learning."
+          title={<>A campus built for <span className="text-gradient-primary">learning & safety</span></>}
+          description="Classrooms, library, labs, playground, and round-the-clock security — everything your child needs to learn and grow."
         />
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -48,8 +48,8 @@ export function Facilities() {
             <div className="h-full rounded-3xl gradient-primary text-primary-foreground p-7 flex flex-col justify-between min-h-[280px]">
               <Shield className="h-10 w-10 text-gold" />
               <div>
-                <h3 className="text-xl font-bold">CCTV Security</h3>
-                <p className="mt-2 text-sm text-white/85">24x7 surveillance ensuring a safe and secure campus environment.</p>
+                <h3 className="text-xl font-bold">Security & CCTV</h3>
+                <p className="mt-2 text-sm text-white/85">24x7 CCTV surveillance ensuring a safe and secure campus environment for every child.</p>
               </div>
             </div>
           </Reveal>
@@ -58,7 +58,7 @@ export function Facilities() {
               <Laptop className="h-10 w-10" />
               <div>
                 <h3 className="text-xl font-bold">Digital Learning</h3>
-                <p className="mt-2 text-sm text-gold-foreground/85">Interactive education system that complements classroom teaching.</p>
+                <p className="mt-2 text-sm text-gold-foreground/85">Smart, digital classrooms across Pre-Primary, Primary, and High School.</p>
               </div>
             </div>
           </Reveal>

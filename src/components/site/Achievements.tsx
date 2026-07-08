@@ -1,6 +1,7 @@
 import { motion, useInView, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { Trophy, Award, Users, Sparkles } from "lucide-react";
+import { Trophy, Award, BookOpen, ShieldCheck } from "lucide-react";
+import results2526 from "@/assets/results-2025-26.jpg";
 
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -19,10 +20,8 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 const stats = [
-  { Icon: Trophy, value: 100, suffix: "%", label: "SSC Results" },
-  { Icon: Award, value: 45, suffix: "+", label: "Years of Excellence" },
-  { Icon: Users, value: 500, suffix: "+", label: "Proud Alumni" },
-  { Icon: Sparkles, value: 30, suffix: "+", label: "Expert Teachers" },
+  { Icon: Trophy, value: 100, suffix: "%", label: "SSC Results Every Year" },
+  { Icon: Award, value: 46, suffix: "+", label: "Years of Excellence" },
 ];
 
 export function Achievements() {
@@ -42,11 +41,14 @@ export function Achievements() {
             Our Achievements
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Numbers that speak for themselves
+            A record we're proud of
           </h2>
+          <p className="mt-4 text-white/80">
+            Consistent academic results and a distinctive strength in values education.
+          </p>
         </motion.div>
 
-        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-14 grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -66,6 +68,65 @@ export function Achievements() {
             </motion.div>
           ))}
         </div>
+
+        <div className="mt-8 grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="rounded-3xl bg-white/10 backdrop-blur border border-white/15 p-6 flex items-start gap-4"
+          >
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gold text-gold-foreground">
+              <BookOpen className="h-6 w-6" />
+            </span>
+            <div>
+              <h3 className="font-bold">Values Education</h3>
+              <p className="mt-1 text-sm text-white/80">
+                Our students excel in Bhagavad Gita learning and values education.
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.22 }}
+            className="rounded-3xl bg-white/10 backdrop-blur border border-white/15 p-6 flex items-start gap-4"
+          >
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gold text-gold-foreground">
+              <ShieldCheck className="h-6 w-6" />
+            </span>
+            <div>
+              <h3 className="font-bold">Trusted Since 1980</h3>
+              <p className="mt-1 text-sm text-white/80">
+                Generations of families have trusted us with their children's education.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="mt-10 max-w-4xl mx-auto"
+        >
+          <div className="rounded-3xl overflow-hidden border border-white/20 shadow-glow">
+            <img
+              src={results2526}
+              alt="St. Maria High School — 100% SSC results 2025-26, all achievers"
+              width={1600}
+              height={900}
+              loading="lazy"
+              className="w-full h-auto"
+            />
+          </div>
+          <p className="mt-3 text-center text-sm text-white/70">
+            Our SSC achievers, 2025-26 — 100% results once again.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

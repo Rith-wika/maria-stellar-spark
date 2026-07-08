@@ -1,22 +1,29 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Youtube, Phone, Mail, MapPin, GraduationCap } from "lucide-react";
+import { Facebook, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/school-logo.png";
 
 export function Footer() {
   return (
-    <footer className="bg-primary-deep text-primary-foreground mt-20">
+    <footer className="bg-primary-deep text-primary-foreground">
       <div className="container-px mx-auto max-w-7xl py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/10 backdrop-blur">
-              <GraduationCap className="h-6 w-6" />
-            </span>
+            <img
+              src={logo}
+              alt="St. Maria High School logo"
+              width={44}
+              height={44}
+              loading="lazy"
+              className="h-11 w-11 rounded-full object-cover bg-white"
+            />
             <div className="leading-tight">
               <div className="font-display text-lg font-bold">St. Maria High School</div>
-              <div className="text-[11px] tracking-[0.18em] uppercase text-white/70">Since 1980</div>
+              <div className="text-[11px] tracking-[0.18em] uppercase text-white/70">Excellence in Education</div>
             </div>
           </div>
           <p className="mt-4 text-sm text-white/75 leading-relaxed">
-            Nurturing young minds through quality education, discipline, and holistic development for over four decades.
+            Shaping young minds with knowledge, discipline, and values of academic
+            excellence and holistic development since 1980.
           </p>
           <div className="mt-5 flex gap-3">
             {[
@@ -79,7 +86,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-px mx-auto max-w-7xl py-5 text-xs text-white/60 flex flex-col sm:flex-row justify-between gap-2">
           <p>© 2026 St. Maria High School. All Rights Reserved.</p>
-          <p>Established 1980 • State Board • English Medium</p>
+          <p>Established 1980 • State Board • English Medium • School Code 36221292081</p>
         </div>
       </div>
     </footer>

@@ -11,12 +11,13 @@ import { Gallery } from "@/components/site/Gallery";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Admissions } from "@/components/site/Admissions";
 import { Contact } from "@/components/site/Contact";
+import { WaveDivider } from "@/components/site/Section";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "St. Maria High School — Excellence in Education Since 1980" },
-      { name: "description", content: "English-medium State Board school in Lalitha Bagh, Hyderabad. 100% SSC results, 45+ years of excellence. Admissions Open 2026-27." },
+      { name: "description", content: "English-medium State Board school in Lalitha Bagh, Uppuguda, Hyderabad. 100% SSC results, 46+ years of excellence. Admissions Open 2026-27." },
       { property: "og:title", content: "St. Maria High School — Excellence in Education" },
       { property: "og:description", content: "Nurturing young minds since 1980 with quality education and holistic development." },
       { property: "og:url", content: "/" },
@@ -31,9 +32,13 @@ function Home() {
     <>
       <Hero />
       <About />
+      <WaveDivider />
       <VisionMission />
+      <WaveDivider flip />
       <Principal />
+      <WaveDivider />
       <WhyChoose />
+      <WaveDivider flip />
       <Facilities />
       <Academics />
       <Achievements />

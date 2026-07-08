@@ -2,25 +2,23 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { SectionHeader } from "./Section";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
+import building from "@/assets/school-building.jpg";
+import activity from "@/assets/activity-science.jpg";
+import results2526 from "@/assets/results-2025-26.jpg";
+import results2425 from "@/assets/results-2024-25.jpg";
+import principal from "@/assets/principal-madam.jpg";
 
 type Item = { src: string; cat: string; title: string; w: number; h: number };
 
 const items: Item[] = [
-  { src: g1, cat: "Events", title: "Annual Day Certificates", w: 800, h: 800 },
-  { src: g2, cat: "Classrooms", title: "Active Learning", w: 800, h: 600 },
-  { src: g3, cat: "Events", title: "Cultural Performance", w: 800, h: 1000 },
-  { src: g4, cat: "Sports", title: "Sports Day", w: 800, h: 600 },
-  { src: g5, cat: "Campus", title: "School Entrance", w: 800, h: 700 },
-  { src: g6, cat: "Achievements", title: "Award Ceremony", w: 800, h: 900 },
+  { src: building, cat: "Campus", title: "Our School Building, Uppuguda", w: 1084, h: 1385 },
+  { src: activity, cat: "Classrooms", title: "Science Activity — Properties of a Circle", w: 899, h: 1599 },
+  { src: results2526, cat: "Achievements", title: "100% SSC Results 2025-26", w: 1600, h: 900 },
+  { src: results2425, cat: "Achievements", title: "SSC Students 2024-25", w: 1069, h: 605 },
+  { src: principal, cat: "Events", title: "Our Principal at the School Event", w: 665, h: 1019 },
 ];
 
-const cats = ["All", "Campus", "Classrooms", "Events", "Sports", "Achievements"];
+const cats = ["All", "Campus", "Classrooms", "Achievements", "Events"];
 
 export function Gallery() {
   const [filter, setFilter] = useState("All");
@@ -61,7 +59,9 @@ export function Gallery() {
               viewport={{ once: true }}
               transition={{ delay: (i % 6) * 0.05 }}
               onClick={() => setOpen(it)}
-              className="mb-5 break-inside-avoid block w-full overflow-hidden rounded-2xl border border-border group relative"
+              className={`mb-5 break-inside-avoid block w-full overflow-hidden rounded-2xl sticker group relative transition-transform hover:rotate-0 hover:scale-[1.02] ${
+                i % 2 === 0 ? "-rotate-1" : "rotate-1"
+              }`}
             >
               <img
                 src={it.src}

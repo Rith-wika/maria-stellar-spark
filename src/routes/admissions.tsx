@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Admissions } from "@/components/site/Admissions";
 import { PageHero } from "@/components/site/PageHero";
+import heroBg from "@/assets/hero-admissions.jpg";
 
 export const Route = createFileRoute("/admissions")({
   head: () => ({
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/admissions")({
   }),
   component: () => (
     <>
-      <PageHero eyebrow="Admissions" title="Join the St. Maria Family" description="A simple, transparent process to begin your child's journey of excellence." />
+      <PageHero eyebrow="Admissions" title="Join the St. Maria Family" description="A simple, transparent process to begin your child's journey of excellence." image={heroBg} />
       <Admissions />
     </>
   ),
