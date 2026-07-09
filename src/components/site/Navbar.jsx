@@ -1,0 +1,131 @@
+import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/school-logo.png";
+
+const links = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/academics", label: "Academics" },
+  { to: "/facilities", label: "Facilities" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/admissions", label: "Admissions" },
+  { to: "/contact", label: "Contact" },
+];
+
+export function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/85 backdrop-blur-md border-b border-border shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      <nav className="container-px mx-auto flex max-w-7xl items-center justify-between py-3">
+        <Link to="/" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
+          <img
+            src={logo}
+            alt="St. Maria High School logo"
+            width={44}
+            height={44}
+            className="h-11 w-11 shrink-0 rounded-full object-cover shadow-soft"
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="font-display text-base sm:text-lg font-bold text-foreground">
+              St. Maria <span className="text-primary">High School</span>
+            </span>
+            <span className="text-[10px] sm:text-xs tracking-[0.18em] uppercase text-muted-foreground">
+              Excellence in Education
+            </span>
+          </span>
+        </Link>
+
+        <ul className="hidden lg:flex items-center gap-1">
+          {links.map((l) => (
+            <li key={l.to}>
+              <NavLink
+                to={l.to}
+                end
+                className={({ isActive }) =>
+                  `px-3 py-2 text-sm font-medium rounded-lg hover:bg-secondary hover:text-primary transition ${
+                    isActive ? "text-primary bg-secondary" : "text-foreground/80"
+                  }`
+                }
+              >
+                {l.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-2">
+          <Link
+            to="/admissions"
+            className="hidden sm:inline-flex items-center rounded-full gradient-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft hover:opacity-95 transition"
+          >
+            Enroll Today
+          </Link>
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+            className="lg:hidden grid h-10 w-10 place-items-center rounded-lg border border-border bg-background"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+      </nav>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            className="lg:hidden border-t border-border bg-background"
+          >
+            <ul className="container-px mx-auto max-w-7xl py-3 flex flex-col">
+              {links.map((l) => (
+                <li key={l.to}>
+                  <NavLink
+                    to={l.to}
+                    end
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `block px-3 py-3 text-sm font-medium rounded-lg hover:bg-secondary ${
+                        isActive ? "text-primary bg-secondary" : ""
+                      }`
+                    }
+                  >
+                    {l.label}
+                  </NavLink>
+                </li>
+              ))}
+              <li className="pt-2">
+                <Link
+                  to="/admissions"
+                  onClick={() => setOpen(false)}
+                  className="block text-center rounded-full gradient-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+                >
+                  Enroll Today
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}
