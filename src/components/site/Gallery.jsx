@@ -3,14 +3,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { SectionHeader } from "./Section";
 import building from "@/assets/school-building.jpg";
-import activity from "@/assets/activity-science.jpg";
+import classroom from "@/assets/gallery-2.jpg";
+import cultural from "@/assets/gallery-3.jpg";
 import results2526 from "@/assets/results-2025-26.jpg";
 import results2425 from "@/assets/results-2024-25.jpg";
 import principal from "@/assets/principal-madam.jpg";
 
 const items = [
   { src: building, cat: "Campus", title: "Our School Building, Uppuguda", w: 1084, h: 1385 },
-  { src: activity, cat: "Classrooms", title: "Science Activity — Properties of a Circle", w: 899, h: 1599 },
+  { src: classroom, cat: "Classrooms", title: "Interactive Classroom Learning", w: 800, h: 600 },
+  { src: cultural, cat: "Events", title: "Cultural Day Celebrations", w: 800, h: 1000 },
   { src: results2526, cat: "Achievements", title: "100% SSC Results 2025-26", w: 1600, h: 900 },
   { src: results2425, cat: "Achievements", title: "SSC Students 2024-25", w: 1069, h: 605 },
   { src: principal, cat: "Events", title: "Our Principal at the School Event", w: 665, h: 1019 },

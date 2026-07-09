@@ -63,8 +63,8 @@ export function Footer() {
         <div>
           <h4 className="font-display text-lg font-semibold mb-4">Contact</h4>
           <ul className="space-y-3 text-sm text-white/80">
-            <li className="flex gap-3"><Phone className="h-4 w-4 mt-0.5 text-gold shrink-0" /> <a href="tel:9704617316" className="hover:text-gold">+91 97046 17316</a></li>
-            <li className="flex gap-3"><Mail className="h-4 w-4 mt-0.5 text-gold shrink-0" /> <a href="mailto:thejasvimedico@gmail.com" className="hover:text-gold break-all">thejasvimedico@gmail.com</a></li>
+            <li className="flex gap-3"><Phone className="h-4 w-4 mt-0.5 text-gold shrink-0" /> <a href="tel:9704617316" className="hover:text-gold">+91 89199 96932</a></li>
+            <li className="flex gap-3"><Mail className="h-4 w-4 mt-0.5 text-gold shrink-0" /> <a href="mailto:st.mariauppuguda@gmail.com" className="hover:text-gold break-all">st.mariauppuguda@gmail.com</a></li>
             <li className="flex gap-3"><MapPin className="h-4 w-4 mt-0.5 text-gold shrink-0" /> <span>18-8-412/A, Lalitha Bagh, Uppuguda, Hyderabad</span></li>
           </ul>
         </div>

@@ -5,9 +5,9 @@ import { z } from "zod";
 import { useState } from "react";
 
 const cards = [
-  { Icon: Phone, title: "Call Us", value: "+91 97046 17316", href: "tel:9704617316" },
-  { Icon: MessageCircle, title: "WhatsApp", value: "+91 97046 17316", href: "https://wa.me/919704617316" },
-  { Icon: Mail, title: "Email Us", value: "thejasvimedico@gmail.com", href: "mailto:thejasvimedico@gmail.com" },
+  { Icon: Phone, title: "Call Us", value: "+91 89199 96932", href: "tel:9704617316" },
+  { Icon: MessageCircle, title: "WhatsApp", value: "+91 89199 96932", href: "https://wa.me/919704617316" },
+  { Icon: Mail, title: "Email Us", value: "st.mariauppuguda@gmail.com", href: "mailto:st.mariauppuguda@gmail.com" },
   { Icon: MapPin, title: "Visit Us", value: "Lalitha Bagh, Uppuguda, Hyderabad", href: "#map" },
 ];
 

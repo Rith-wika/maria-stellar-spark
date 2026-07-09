@@ -1,6 +1,6 @@
 import { BookOpen, HeartHandshake, Lightbulb, Users, GraduationCap, Gem } from "lucide-react";
 import { Reveal } from "./Section";
-import schoolImg from "@/assets/activity-science.jpg";
+import schoolImg from "@/assets/gallery-2.jpg";
 
 const coreValues = [
   { Icon: BookOpen, label: "Knowledge" },
@@ -25,9 +25,9 @@ export function About() {
               <div className="rounded-[2rem] overflow-hidden shadow-soft ring-1 ring-border">
                 <img
                   src={schoolImg}
-                  alt="St. Maria students presenting a science activity project"
-                  width={899}
-                  height={1599}
+                  alt="St. Maria students actively participating in a classroom lesson"
+                  width={800}
+                  height={600}
                   loading="lazy"
                   className="w-full h-full object-cover object-top aspect-[4/3]"
                 />
